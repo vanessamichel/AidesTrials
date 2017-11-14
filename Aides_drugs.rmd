@@ -14,28 +14,67 @@ korea<-read.csv(file="korea_aides.csv",header=TRUE)
 cenAfrica<-read.csv(file="central_africa_aides.csv",header=TRUE)
 ```
 
-#Instructions
+#Introduction
 
 Three new preventative aides drugs were tested in clinical trials in 2015. The trial designs were modeled after the famous RV_144 Aides Trials in Tailand in 2009.  Analyze and report on the apparent effectiveness of the three different drugs. Does sex of the participant seem to be a factor for any of the drugs?
 
+Our research question is:
+Is taking the drug effective in preventing Aids in Females?
+Is taking the drug effective in preventing Aids in Males?
+
+#Methods
+
+We will be using the folloiwng methods: bar charts, two-way tables and a chi-squared test.
+
+#Results
+
+# Descriptive Results
+
+## Graphical Descriptive Results
 
 # South Carolina
 
 We will subset the data by sex to see if the drug is sex specific.
+### South Carolina Aids Results (Males)
+```{r}
+ScarolinaM <- filter(Scarolina,sex=="M")
+barchartGC(~infected + group, data=ScarolinaM, type="percent")
+```
+
+### South Carolina Aids Results (Females)
+```{r}
+ScarolinaF <- filter(Scarolina,sex=="F")
+barchartGC(~infected + group, data=ScarolinaF, type="percent")
+```
+The amount of females infected is lower when receiving the drug. However, the amount of males affected is higher when receiving the drug. 
 
 
 # Central Africa
 
 We will subset the data by sex to see if the drug is sex specific.
+### Central Africa Aids Results (Males)
+```{r}
+cenAfricaM <- filter(cenAfrica,sex=="M")
+barchartGC(~infected + group, data=cenAfricaM, type="percent")
+```
 
-
+### Central Africa Aids Results (Females)
+```{r}
+cenAfricaF <- filter(cenAfrica,sex=="F")
+barchartGC(~infected + group, data=cenAfricaF, type="percent")
+```
 
 # Korea
 
 We will subset the data by sex to see if the drug is sex specific.
+### Korea Aids Results (Males)
+```{r}
+koreaM <- filter(korea,sex=="M")
+barchartGC(~infected + group, data=koreaM, type="percent")
+```
 
-
-
-
-
-
+### Korea Aids Results (Females)
+```{r}
+koreaF <- filter(korea,sex=="F")
+barchartGC(~infected + group, data=koreaF, type="percent")
+```
