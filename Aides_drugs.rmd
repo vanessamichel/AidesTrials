@@ -62,11 +62,15 @@ cenAfricaM <- filter(cenAfrica,sex=="M")
 barchartGC(~infected + group, data=cenAfricaM, type="percent")
 ```
 
+After viewing the data graphically, it appears that the amount of Males in the **aids** group is about the same amount as the **non-Aids** group. 
+
 ### Central Africa Aids Results (Females)  
 ```{r}
 cenAfricaF <- filter(cenAfrica,sex=="F")
 barchartGC(~infected + group, data=cenAfricaF, type="percent")
 ```
+
+After viewing the data graphically, it appears that there are less Males in the **Aids** group who received the drug than the **non-Aids** group. 
 
 # Korea  
 
@@ -78,15 +82,23 @@ koreaM <- filter(korea,sex=="M")
 barchartGC(~infected + group, data=koreaM, type="percent")
 ```
 
+After viewing the data graphically, it appears that there is a much lower percentage of Males in the **aids** group who received the drug. The drug appears to be working. 
+
 ### Korea Aids Results (Females)  
 ```{r}
 koreaF <- filter(korea,sex=="F")
 barchartGC(~infected + group, data=koreaF, type="percent")
 ```
 
+After viewing the data graphically, it appears that the **aids** group has a much higher percentage of Females who received the drug than the **non-Aids** group. 
+
 #Numerical Descriptive Results
 
 To view the results of our data numerically, we will use a two-way table with row percents.
+
+
+### South Carolina Two-way Table:
+
 
 #Inferential Results
 Looking at the graphical and numerical results alone is not enough to tell us whether our results will also apply to the population at large. To do this, we will run a chi-square test.
