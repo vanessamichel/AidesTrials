@@ -1,7 +1,7 @@
 ---
 title: "Aides Tests"
-author: "Dr K"
-date: "May 24, 2017"
+author: "Vanessa Michel"
+date: "November 29, 2017"
 output: html_document
 ---
 
@@ -24,7 +24,7 @@ Is taking the drug effective in preventing Aids in Males?
 
 #Methods
 
-We will be using the folloiwng methods: bar charts, two-way tables and a chi-squared test.
+We will be using the graphical and numerical tests: barcharts and two-way tables. We will be using a chi-squared test to measure our inferential results.
 
 #Results
 
@@ -32,49 +32,65 @@ We will be using the folloiwng methods: bar charts, two-way tables and a chi-squ
 
 ## Graphical Descriptive Results
 
-# South Carolina
+# South Carolina  
+ We will subset the data by sex to see if the drug is sex specific.
 
-We will subset the data by sex to see if the drug is sex specific.
-### South Carolina Aids Results (Males)
+### South Carolina Aids Results (Males)  
 ```{r}
 ScarolinaM <- filter(Scarolina,sex=="M")
 barchartGC(~infected + group, data=ScarolinaM, type="percent")
 ```
 
-### South Carolina Aids Results (Females)
+After viewing the data graphically, it appears that there are more men in the **Aids** group who received the drug than there were in the **non-Aids** group who received the drug. The drug seems to be ineffective in Men in South Carolina and may be increasing Aids in this population. 
+
+### South Carolina Aids Results (Females)  
 ```{r}
 ScarolinaF <- filter(Scarolina,sex=="F")
 barchartGC(~infected + group, data=ScarolinaF, type="percent")
 ```
-The amount of females infected is lower when receiving the drug. However, the amount of males affected is higher when receiving the drug. 
+
+After viewing the data graphically, it appears that there are more women in the **non-Aids** group who received the drug than there were in the **Aids** group. The drug appears to be effective in Women of South Carolina.  
 
 
-# Central Africa
+# Central Africa  
 
-We will subset the data by sex to see if the drug is sex specific.
-### Central Africa Aids Results (Males)
+We will subset the data by sex to see if the drug is sex specific.  
+
+### Central Africa Aids Results (Males)  
 ```{r}
 cenAfricaM <- filter(cenAfrica,sex=="M")
 barchartGC(~infected + group, data=cenAfricaM, type="percent")
 ```
 
-### Central Africa Aids Results (Females)
+### Central Africa Aids Results (Females)  
 ```{r}
 cenAfricaF <- filter(cenAfrica,sex=="F")
 barchartGC(~infected + group, data=cenAfricaF, type="percent")
 ```
 
-# Korea
+# Korea  
 
-We will subset the data by sex to see if the drug is sex specific.
-### Korea Aids Results (Males)
+We will subset the data by sex to see if the drug is sex specific. 
+
+### Korea Aids Results (Males)  
 ```{r}
 koreaM <- filter(korea,sex=="M")
 barchartGC(~infected + group, data=koreaM, type="percent")
 ```
 
-### Korea Aids Results (Females)
+### Korea Aids Results (Females)  
 ```{r}
 koreaF <- filter(korea,sex=="F")
 barchartGC(~infected + group, data=koreaF, type="percent")
 ```
+
+#Numerical Descriptive Results
+
+To view the results of our data numerically, we will use a two-way table with row percents.
+
+#Inferential Results
+Looking at the graphical and numerical results alone is not enough to tell us whether our results will also apply to the population at large. To do this, we will run a chi-square test.
+
+
+#Discussion and Conclusion  
+After viewing the results graphically, numerically, and running chi-square tests on the data, we can conclude the following:
