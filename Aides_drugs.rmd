@@ -209,12 +209,29 @@ chisqtestGC(cenAfrica_table)
 chisqtestGC(cenAfricaM_table)
 ```
 
-### **Central Africa chi-square test (Males):** 
+### **Central Africa chi-square test (Females):** 
 
 ```{r}
 chisqtestGC(cenAfricaF_table)
 ```
 
+### **Korea chi-square test:** 
+
+```{r}
+chisqtestGC(korea_table)
+```
+
+### **Korea chi-square test (Males):** 
+
+```{r}
+chisqtestGC(koreaM_table)
+```
+
+### **Korea chi-square test (Females):** 
+
+```{r}
+chisqtestGC(koreaF_table)
+```
 
 #Discussion and Conclusion  
 After viewing the results graphically, numerically, and running chi-square tests on the data, we can conclude the following:
