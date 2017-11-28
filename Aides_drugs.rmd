@@ -130,7 +130,52 @@ ScarolinaF_table <- xtabs(~infected + group, data=ScarolinaF)
 rowPerc(ScarolinaF_table)
 ```
 
+### **Central Africa Two-way Table:**  
 
+```{r}
+cenAfrica_table <- xtabs(~infected + group, data=cenAfrica)
+rowPerc(cenAfrica_table)
+```
+
+
+### **Central Africa Two-way Table (Males):** 
+
+```{r}
+cenAfricaM_table <- xtabs(~infected + group, data=cenAfricaM)
+rowPerc(cenAfricaM_table)
+```
+
+
+### **Central Africa Two-way Table (Females):**  
+
+```{r}
+cenAfricaF_table <- xtabs(~infected + group, data=cenAfricaF)
+rowPerc(cenAfricaF_table)
+```
+
+
+### **Korea Two-way Table:**  
+
+```{r}
+korea_table <- xtabs(~infected + group, data=korea)
+rowPerc(korea_table)
+```
+
+
+### **Korea Two-way Table (Males):**  
+
+```{r}
+koreaM_table <- xtabs(~infected + group, data=koreaM)
+rowPerc(koreaM_table)
+```
+
+
+### **Korea Two-way Table (Females):** 
+
+```{r}
+koreaF_table <- xtabs(~infected + group, data=koreaF)
+rowPerc(koreaF_table)
+```
 
 #Inferential Results
 Looking at the graphical and numerical results alone is not enough to tell us whether our results will also apply to the population at large. To do this, we will run a chi-square test.
