@@ -191,11 +191,30 @@ chisqtestGC(Scarolina_table)
 chisqtestGC(ScarolinaM_table)
 ```
 
-### **South Carolina chi-square test (Males):** 
+### **South Carolina chi-square test (Females):** 
 
 ```{r}
-chisqtestGC(ScarolinaM_table)
+chisqtestGC(ScarolinaF_table)
 ```
+
+### **Central Africa chi-square test:** 
+
+```{r}
+chisqtestGC(cenAfrica_table)
+```
+
+### **Central Africa chi-square test (Males):** 
+
+```{r}
+chisqtestGC(cenAfricaM_table)
+```
+
+### **Central Africa chi-square test (Males):** 
+
+```{r}
+chisqtestGC(cenAfricaF_table)
+```
+
 
 #Discussion and Conclusion  
 After viewing the results graphically, numerically, and running chi-square tests on the data, we can conclude the following:
