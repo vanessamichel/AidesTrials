@@ -26,13 +26,13 @@ Is taking the drug effective in preventing Aids in Males?
 
 We will be using the graphical and numerical tests: barcharts and two-way tables. We will be using a chi-squared test to measure our inferential results.
 
-#Results
+#Results  
 
-# Descriptive Results
+# Descriptive Results  
 
-## Graphical Descriptive Results
+## Graphical Descriptive Results  
 
-# South Carolina  
+# South Carolina Aids Results  
 
 ```{r}
 barchartGC(~infected + group, data=Scarolina, type="percent")
@@ -48,7 +48,7 @@ barchartGC(~infected + group, data=ScarolinaM, type="percent")
 
 After viewing the data graphically, it appears that there are more men in the **Aids** group who received the drug than there were in the **non-Aids** group who received the drug. The drug seems to be ineffective in Men in South Carolina and may be increasing Aids in this population. 
 
-### South Carolina Aids Results (Females)  
+### South Carolina Aids Results (Females)   
 ```{r}
 ScarolinaF <- filter(Scarolina,sex=="F")
 barchartGC(~infected + group, data=ScarolinaF, type="percent")
@@ -57,7 +57,7 @@ barchartGC(~infected + group, data=ScarolinaF, type="percent")
 After viewing the data graphically, it appears that there are more women in the **non-Aids** group who received the drug than there were in the **Aids** group. The drug appears to be effective in Women of South Carolina.  
 
 
-# Central Africa  
+# Central Africa Aids Results  
 ```{r}
 barchartGC(~infected + group, data=cenAfrica, type="percent")
 ```
@@ -81,7 +81,7 @@ barchartGC(~infected + group, data=cenAfricaF, type="percent")
 
 After viewing the data graphically, it appears that there are less Males in the **Aids** group who received the drug than the **non-Aids** group. 
 
-# Korea  
+# Korea Aids Results  
 ```{r}
 barchartGC(~infected + group, data=korea, type="percent")
 ```
@@ -179,6 +179,11 @@ rowPerc(koreaF_table)
 
 #Inferential Results
 Looking at the graphical and numerical results alone is not enough to tell us whether our results will also apply to the population at large. To do this, we will run a chi-square test.
+
+### **South Carolina chi-square test:** 
+```{r}
+chisqtestGC(Scarolina_table)
+```
 
 
 #Discussion and Conclusion  
