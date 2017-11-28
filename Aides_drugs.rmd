@@ -110,12 +110,27 @@ After viewing the data graphically, it appears that the **aids** group has a muc
 To view the results of our data numerically, we will use a two-way table with row percents.
 
 
-### **South Carolina Two-way Table (Males):**
+### **South Carolina Two-way Table:**  
+
+```{r}
+Scarolina_table <- xtabs(~infected + group, data=Scarolina)
+rowPerc(Scarolina_table)
+```
+
+### **South Carolina Two-way Table (Males):**  
+
+```{r}
+ScarolinaM_table <- xtabs(~infected + group, data=ScarolinaM)
+rowPerc(ScarolinaM_table)
+```
+
+### **South Carolina Two-way Table (Females):**  
+```{r}
+ScarolinaF_table <- xtabs(~infected + group, data=ScarolinaF)
+rowPerc(ScarolinaF_table)
+```
 
 
-Of those in the **aids** group, 57.35% received the drug, 42.65% received the placebo. 
-Of those in the **non-Aids** group, 49.52% received the drug, 50.48% received the placebo. 
-After viewing the data numerically, it appears that a higher percentage of Males who were infected with aids, received the drug. 
 
 #Inferential Results
 Looking at the graphical and numerical results alone is not enough to tell us whether our results will also apply to the population at large. To do this, we will run a chi-square test.
