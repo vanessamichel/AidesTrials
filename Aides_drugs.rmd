@@ -185,6 +185,17 @@ Looking at the graphical and numerical results alone is not enough to tell us wh
 chisqtestGC(Scarolina_table)
 ```
 
+### **South Carolina chi-square test (Males):**  
+
+```{r}
+chisqtestGC(ScarolinaM_table)
+```
+
+### **South Carolina chi-square test (Males):** 
+
+```{r}
+chisqtestGC(ScarolinaM_table)
+```
 
 #Discussion and Conclusion  
 After viewing the results graphically, numerically, and running chi-square tests on the data, we can conclude the following:
