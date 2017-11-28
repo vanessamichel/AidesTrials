@@ -33,6 +33,11 @@ We will be using the graphical and numerical tests: barcharts and two-way tables
 ## Graphical Descriptive Results
 
 # South Carolina  
+
+```{r}
+barchartGC(~infected + group, data=Scarolina, type="percent")
+```
+
  We will subset the data by sex to see if the drug is sex specific.
 
 ### South Carolina Aids Results (Males)  
@@ -53,6 +58,10 @@ After viewing the data graphically, it appears that there are more women in the 
 
 
 # Central Africa  
+```{r}
+barchartGC(~infected + group, data=cenAfrica, type="percent")
+```
+
 
 We will subset the data by sex to see if the drug is sex specific.  
 
@@ -73,6 +82,10 @@ barchartGC(~infected + group, data=cenAfricaF, type="percent")
 After viewing the data graphically, it appears that there are less Males in the **Aids** group who received the drug than the **non-Aids** group. 
 
 # Korea  
+```{r}
+barchartGC(~infected + group, data=korea, type="percent")
+```
+
 
 We will subset the data by sex to see if the drug is sex specific. 
 
