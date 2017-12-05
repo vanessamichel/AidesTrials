@@ -28,11 +28,11 @@ We will be using a combination of graphical and numerical tests to analyze the d
 
 #Results  
 
-# Descriptive Results  
+## Descriptive Results  
 
-## Graphical Descriptive Results  
+### Graphical Descriptive Results  
 
-# South Carolina Aids Bar Chart  
+##### **South Carolina Aids Bar Chart:**  
 
 ```{r}
 barchartGC(~infected + group, data=Scarolina, type="percent")
@@ -42,7 +42,7 @@ After viewing the data graphically, it appears that more people in the **Aids** 
 
  We will subset the data by sex to see if the drug is sex specific.
 
-### South Carolina Aids Bar Chart (Males)  
+##### **South Carolina Aids Bar Chart (Males):**  
 ```{r}
 ScarolinaM <- filter(Scarolina,sex=="M")
 barchartGC(~infected + group, data=ScarolinaM, type="percent")
@@ -50,7 +50,7 @@ barchartGC(~infected + group, data=ScarolinaM, type="percent")
 
 After viewing the data graphically, it appears that there are more men in the **Aids** group who received the drug than there were in the **non-Aids** group who received the drug. The drug seems to be ineffective in Men in South Carolina and appears to be increasing chances of Aids in this population. 
 
-### South Carolina Aids Bar Chart (Females)   
+##### **South Carolina Aids Bar Chart (Females):**   
 ```{r}
 ScarolinaF <- filter(Scarolina,sex=="F")
 barchartGC(~infected + group, data=ScarolinaF, type="percent")
@@ -59,7 +59,7 @@ barchartGC(~infected + group, data=ScarolinaF, type="percent")
 After viewing the data graphically, it appears that of the women in the **non-Aids** group a slightly larger number received the drug. Of the women in the **Aids** group, a much lower amount received the drug than received the placebo. The drug appears to be effective in Women of South Carolina.  
 
 
-# Central Africa Aids Bar Chart  
+##### **Central Africa Aids Bar Chart:**   
 ```{r}
 barchartGC(~infected + group, data=cenAfrica, type="percent")
 ```
@@ -68,7 +68,7 @@ After viewing the data graphically, it appears that in the **non-Aids** group, a
 
 We will subset the data by sex to see if the drug is sex specific.  
 
-### Central Africa Aids Bar Chart (Males)  
+##### **Central Africa Aids Bar Chart (Males):**  
 ```{r}
 cenAfricaM <- filter(cenAfrica,sex=="M")
 barchartGC(~infected + group, data=cenAfricaM, type="percent")
@@ -76,7 +76,7 @@ barchartGC(~infected + group, data=cenAfricaM, type="percent")
 
 After viewing the data graphically, it appears that the two groups are very similar. Of the both the **aids** and **non-Aids** groups, there is about the same number of people received the drug vs. the placebo. The drug does not appear to have been effective in preventing Aids in Males in Central Africa.
 
-### Central Africa Aids Bar Chart (Females)  
+##### **Central Africa Aids Bar Chart (Females):**   
 ```{r}
 cenAfricaF <- filter(cenAfrica,sex=="F")
 barchartGC(~infected + group, data=cenAfricaF, type="percent")
@@ -84,7 +84,7 @@ barchartGC(~infected + group, data=cenAfricaF, type="percent")
 
 After viewing the data graphically, it appears that there are less Females in the **Aids** group who received the drug than received the placebo. In the **non-Aids** group, about the same amount of Females received the drug vs. the placebo. The drug appears to have had some success in preventing Aids in Females in Central Africa. 
 
-# Korea Aids Bar Chart  
+##### **Korea Aids Bar Chart:**   
 ```{r}
 barchartGC(~infected + group, data=korea, type="percent")
 ```
@@ -93,7 +93,7 @@ After viewing the data graphically, it appears that there is a smaller amount of
 
 We will subset the data by sex to see if the drug is sex specific. 
 
-### Korea Aids Bar Chart (Males)  
+##### **Korea Aids Bar Chart (Males):**  
 ```{r}
 koreaM <- filter(korea,sex=="M")
 barchartGC(~infected + group, data=koreaM, type="percent")
@@ -101,7 +101,7 @@ barchartGC(~infected + group, data=koreaM, type="percent")
 
 After viewing the data graphically, it appears that there is a much lower percentage of Males in the **aids** group who received the drug vs. the placebo. In the **non-Aids** group, there was a slightly higher percentage of people who received the drug. The drug appears to be working for Males in Korea. 
 
-### Korea Aids Bar Chart (Females)  
+##### **Korea Aids Bar Chart (Females):**   
 ```{r}
 koreaF <- filter(korea,sex=="F")
 barchartGC(~infected + group, data=koreaF, type="percent")
@@ -114,27 +114,31 @@ After viewing the data graphically, it appears that the **aids** group has a muc
 To view the results of our data numerically, we will use a two-way table with row percents.
 
 
-### **South Carolina Two-way Table:**  
+##### **South Carolina Two-way Table:**  
 
 ```{r}
 Scarolina_table <- xtabs(~infected + group, data=Scarolina)
 rowPerc(Scarolina_table)
 ```
 
-### **South Carolina Two-way Table (Males):**  
+Of those in the **Aids** group, 49.37% recevied the drug, 50.53% received the placebo.   
+Of those in the **non-Aids** group, 50.04% received the drug, 49.96% received the placebo.   
+After viewing the data numerically, it appears that the drug did not have any significant affect on the prevention of Aids in South Carolina.   
+
+##### **South Carolina Two-way Table (Males):**  
 
 ```{r}
 ScarolinaM_table <- xtabs(~infected + group, data=ScarolinaM)
 rowPerc(ScarolinaM_table)
 ```
 
-### **South Carolina Two-way Table (Females):**  
+##### **South Carolina Two-way Table (Females):**  
 ```{r}
 ScarolinaF_table <- xtabs(~infected + group, data=ScarolinaF)
 rowPerc(ScarolinaF_table)
 ```
 
-### **Central Africa Two-way Table:**  
+##### **Central Africa Two-way Table:**  
 
 ```{r}
 cenAfrica_table <- xtabs(~infected + group, data=cenAfrica)
@@ -142,7 +146,7 @@ rowPerc(cenAfrica_table)
 ```
 
 
-### **Central Africa Two-way Table (Males):** 
+##### **Central Africa Two-way Table (Males):** 
 
 ```{r}
 cenAfricaM_table <- xtabs(~infected + group, data=cenAfricaM)
@@ -150,7 +154,7 @@ rowPerc(cenAfricaM_table)
 ```
 
 
-### **Central Africa Two-way Table (Females):**  
+##### **Central Africa Two-way Table (Females):**  
 
 ```{r}
 cenAfricaF_table <- xtabs(~infected + group, data=cenAfricaF)
@@ -158,7 +162,7 @@ rowPerc(cenAfricaF_table)
 ```
 
 
-### **Korea Two-way Table:**  
+##### **Korea Two-way Table:**  
 
 ```{r}
 korea_table <- xtabs(~infected + group, data=korea)
@@ -166,7 +170,7 @@ rowPerc(korea_table)
 ```
 
 
-### **Korea Two-way Table (Males):**  
+##### **Korea Two-way Table (Males):**  
 
 ```{r}
 koreaM_table <- xtabs(~infected + group, data=koreaM)
@@ -174,7 +178,7 @@ rowPerc(koreaM_table)
 ```
 
 
-### **Korea Two-way Table (Females):** 
+##### **Korea Two-way Table (Females):** 
 
 ```{r}
 koreaF_table <- xtabs(~infected + group, data=koreaF)
@@ -184,54 +188,54 @@ rowPerc(koreaF_table)
 #Inferential Results
 Looking at the graphical and numerical results alone is not enough to tell us whether our results will also apply to the population at large. To do this, we will run a chi-square test.
 
-### **South Carolina chi-square test:** 
+##### **South Carolina chi-square test:** 
 ```{r}
 chisqtestGC(Scarolina_table)
 ```
 
-### **South Carolina chi-square test (Males):**  
+##### **South Carolina chi-square test (Males):**  
 
 ```{r}
 chisqtestGC(ScarolinaM_table)
 ```
 
-### **South Carolina chi-square test (Females):** 
+##### **South Carolina chi-square test (Females):** 
 
 ```{r}
 chisqtestGC(ScarolinaF_table)
 ```
 
-### **Central Africa chi-square test:** 
+##### **Central Africa chi-square test:** 
 
 ```{r}
 chisqtestGC(cenAfrica_table)
 ```
 
-### **Central Africa chi-square test (Males):** 
+##### **Central Africa chi-square test (Males):** 
 
 ```{r}
 chisqtestGC(cenAfricaM_table)
 ```
 
-### **Central Africa chi-square test (Females):** 
+##### **Central Africa chi-square test (Females):** 
 
 ```{r}
 chisqtestGC(cenAfricaF_table)
 ```
 
-### **Korea chi-square test:** 
+##### **Korea chi-square test:** 
 
 ```{r}
 chisqtestGC(korea_table)
 ```
 
-### **Korea chi-square test (Males):** 
+##### **Korea chi-square test (Males):** 
 
 ```{r}
 chisqtestGC(koreaM_table)
 ```
 
-### **Korea chi-square test (Females):** 
+##### **Korea chi-square test (Females):** 
 
 ```{r}
 chisqtestGC(koreaF_table)
