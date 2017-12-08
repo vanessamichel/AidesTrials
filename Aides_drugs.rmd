@@ -123,7 +123,10 @@ rowPerc(Scarolina_table)
 
 Of those in the **Aids** group, 49.37% recevied the drug, 50.53% received the placebo.   
 Of those in the **non-Aids** group, 50.04% received the drug, 49.96% received the placebo.   
-After viewing the data numerically, it appears that the drug did not have any significant affect on the prevention of Aids in South Carolina.   
+After viewing the data numerically, it appears that this drug did not have any significant affect on the prevention of Aids in the clinical trial in South Carolina.   
+
+
+We will separate the data by sex, creating a separate two way table for each sex to see if drug is sex specific.         
 
 ##### **South Carolina Two-way Table (Males):**  
 
@@ -132,11 +135,20 @@ ScarolinaM_table <- xtabs(~infected + group, data=ScarolinaM)
 rowPerc(ScarolinaM_table)
 ```
 
+Of those Males in the **Aids** group, 57.35% received the drug, 42.65% received the placebo.  
+Of those Males in the **non-Aids** group, 49.52% received the drug, 50.48% received the placebo.   
+After viewing the data numerically, it appears that this drug was not effective in preventing Aids in Males in South Carolina. It seems that the drug is giving the Males Aids.    
+
+
 ##### **South Carolina Two-way Table (Females):**  
 ```{r}
 ScarolinaF_table <- xtabs(~infected + group, data=ScarolinaF)
 rowPerc(ScarolinaF_table)
 ```
+
+Of those Females in the **Aids** group, 38.83% received the drug, 61.17% received the placebo.   
+Of those Females in the **non-Aids** group, 50.55% received the drug, 49.45% received the placebo.    
+After viewing the data numerically, it appears that this drug was effective in preventing Aids in Females in South Carolina. This is opposite from the results this drug had on Males. This drug appears to be sex specific. 
 
 ##### **Central Africa Two-way Table:**  
 
@@ -145,6 +157,8 @@ cenAfrica_table <- xtabs(~infected + group, data=cenAfrica)
 rowPerc(cenAfrica_table)
 ```
 
+
+We will separate the data by sex, creating a separate two way table for each sex to see if drug is sex specific.     
 
 ##### **Central Africa Two-way Table (Males):** 
 
@@ -169,6 +183,8 @@ korea_table <- xtabs(~infected + group, data=korea)
 rowPerc(korea_table)
 ```
 
+
+We will separate the data by sex, creating a separate two way table for each sex to see if drug is sex specific.    
 
 ##### **Korea Two-way Table (Males):**  
 
