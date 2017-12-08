@@ -18,7 +18,7 @@ cenAfrica<-read.csv(file="central_africa_aides.csv",header=TRUE)
 
 Three new preventative aides drugs were tested in clinical trials in 2015. The trial designs were modeled after the famous RV_144 Aides Trials in Tailand in 2009.  Analyze and report on the apparent effectiveness of the three different drugs. Does sex of the participant seem to be a factor for any of the drugs?
 
-We are going to address two research questions in our analysis:
+We are going to address two research questions in our analysis of the 3 drugs tested during these clinical trials. We want to answer the following:
 Are the drugs effective in preventing Aids? Are the drugs sex specific?
 
 
@@ -38,7 +38,7 @@ We will be using a combination of graphical and numerical tests to analyze the d
 barchartGC(~infected + group, data=Scarolina, type="percent")
 ```
 
-After viewing the data graphically, it appears that more people in the **Aids** group received the placebo than received the drug. In the **Non-Aids** group, it appears that the same amount of people received the drug that received the placebo. The drug does not appear to have a signigicant effect on prevention of Aids. 
+After viewing the data graphically, it appears that there were slightly more people in the **Aids** group received the placebo than received the drug. In the **Non-Aids** group, it appears that the same amount of people received the drug that received the placebo. The drug does not appear to have a signigicant effect on prevention of Aids. 
 
  We will subset the data by sex to see if the drug is sex specific.
 
@@ -48,7 +48,7 @@ ScarolinaM <- filter(Scarolina,sex=="M")
 barchartGC(~infected + group, data=ScarolinaM, type="percent")
 ```
 
-After viewing the data graphically, it appears that there are more men in the **Aids** group who received the drug than there were in the **non-Aids** group who received the drug. The drug seems to be ineffective in Men in South Carolina and appears to be increasing chances of Aids in this population. 
+After viewing the data graphically, it appears that there are more men in the **Aids** group who received the drug than there were who received the placebo. In the **non-Aids** group, there were slightly less males who received the drug than received the placebo. The drug seems to be ineffective in Men in South Carolina. It appears that the drug may be giving the males Aids.
 
 ##### **South Carolina Aids Bar Chart (Females):**   
 ```{r}
@@ -56,7 +56,7 @@ ScarolinaF <- filter(Scarolina,sex=="F")
 barchartGC(~infected + group, data=ScarolinaF, type="percent")
 ```
 
-After viewing the data graphically, it appears that of the women in the **non-Aids** group a slightly larger number received the drug. Of the women in the **Aids** group, a much lower amount received the drug than received the placebo. The drug appears to be effective in Women of South Carolina.  
+After viewing the data graphically, it appears that of the women in the **non-Aids** group a slightly larger number received the drug. Of the women in the **Aids** group, a much lower amount received the drug than received the placebo. This drug appears to be effective in preventing Aids in females in South Carolina.  
 
 
 ##### **Central Africa Aids Bar Chart:**   
@@ -64,7 +64,7 @@ After viewing the data graphically, it appears that of the women in the **non-Ai
 barchartGC(~infected + group, data=cenAfrica, type="percent")
 ```
 
-After viewing the data graphically, it appears that in the **non-Aids** group, an equal amount of people received the drug vs. the placebo. Of the people in the **Aids** group, a slightly lower number of participants received the drug vs. the placebo. The drug appears to have had little to no effect on preventing Aids in Central Africa. 
+After viewing the data graphically, it appears that in the **non-Aids** group, an equal amount of people received the drug vs. the placebo. Of the people in the **Aids** group, a slightly lower number of participants received the drug vs. the placebo. The drug appears to have had a small effect on preventing Aids in Central Africa, though it does not seem to be very significant. 
 
 We will subset the data by sex to see if the drug is sex specific.  
 
@@ -74,7 +74,7 @@ cenAfricaM <- filter(cenAfrica,sex=="M")
 barchartGC(~infected + group, data=cenAfricaM, type="percent")
 ```
 
-After viewing the data graphically, it appears that the two groups are very similar. Of the both the **aids** and **non-Aids** groups, there is about the same number of people received the drug vs. the placebo. The drug does not appear to have been effective in preventing Aids in Males in Central Africa.
+After viewing the data graphically, it appears that the two groups are very similar. Of the both the **aids** and **non-Aids** groups, there is about the same number of people received the drug vs. the placebo. Although in the **aids** group, the number of people who received the drug was slightly lower than the number who received the placebo. The drug does not appear to have been effective in preventing Aids in Males in Central Africa.
 
 ##### **Central Africa Aids Bar Chart (Females):**   
 ```{r}
@@ -89,7 +89,7 @@ After viewing the data graphically, it appears that there are less Females in th
 barchartGC(~infected + group, data=korea, type="percent")
 ```
 
-After viewing the data graphically, it appears that there is a smaller amount of participants in the **Aids** group who received the drug than received the placeob. Of the **non-Aids** group the results were about the same whether a person received the drug or the placebo. It appears the drug had positive results in preventing Aids in Korea. 
+After viewing the data graphically, it appears that there is a smaller amount of participants in the **Aids** group who received the drug than received the placebo. Of the **non-Aids** group the results were about the same whether a person received the drug or the placebo. It appears the drug was effective in preventing Aids in Korea. 
 
 We will subset the data by sex to see if the drug is sex specific. 
 
@@ -99,7 +99,7 @@ koreaM <- filter(korea,sex=="M")
 barchartGC(~infected + group, data=koreaM, type="percent")
 ```
 
-After viewing the data graphically, it appears that there is a much lower percentage of Males in the **aids** group who received the drug vs. the placebo. In the **non-Aids** group, there was a slightly higher percentage of people who received the drug. The drug appears to be working for Males in Korea. 
+After viewing the data graphically, it appears that there is a much lower percentage of Males in the **aids** group who received the drug vs. the placebo. In the **non-Aids** group, there was a slightly higher percentage of people who received the drug. This drug appears to be effective in preventing Aids in Males in Korea. 
 
 ##### **Korea Aids Bar Chart (Females):**   
 ```{r}
@@ -107,7 +107,7 @@ koreaF <- filter(korea,sex=="F")
 barchartGC(~infected + group, data=koreaF, type="percent")
 ```
 
-After viewing the data graphically, it appears that the **aids** group has a much higher percentage of Females who received the drug than the placebo. In the **non-Aids** group, about the same amount of people received the drug vs. the placebo. The drug does not appear to be effective in preventing Aids in Females in Korea. It appears the drug is causing a higher number of Females to contract Aids. 
+After viewing the data graphically, it appears that the **aids** group has a much higher percentage of Females who received the drug than the placebo. In the **non-Aids** group, about the same amount of people received the drug vs. the placebo. The drug does not appear to be effective in preventing Aids in Females in Korea. It appears this drug is causing Aids in Females in Korea.
 
 #Numerical Descriptive Results
 
