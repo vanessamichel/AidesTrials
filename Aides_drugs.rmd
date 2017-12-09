@@ -347,4 +347,9 @@ chisqtestGC(koreaF_table)
 Our p-value is 0.0066. The chances of getting such a result are extremely low. Therefore, we will reject the null hypothesis. It appears that there is a relationship between this drug and preventing Aids in Females.   
 
 #Discussion and Conclusion  
-After viewing the results graphically, numerically, and running chi-square tests on the data, we can conclude the following:
+After viewing the results graphically, numerically, and running chi-square tests on the data, we can conclude the following:   
+* The drug administered in South Carolina was not effective in preventing Aids in the sample population. However, it appear that this drug was sex specific. Although it did not prevent Aids in Males, it did appear to prevent Aids in Females.   
+* The drug administered in Central Africa was not effective in preventing Aids. This drug appeared to be sex specific in the sample population. However, after running a chi-square test, we found that these results would not apply to the population at large and we concluded that when we consider the population at large, it was not effective in preventing Aids in Males or Females.  
+* The drug administered in Korea was not effective in preventing Aids. The drug appears to have been sex specific as we found it was effective in preventing Aids in Males but was not effective in preventing Aids in Females. 
+
+Things we did not consider that could be helpful in future research on this topic include cultural differences in the populations, as well as religious and social differences to see how those could have affected our results. 
