@@ -246,60 +246,105 @@ After viewing the data numerically, it appears that this drug was not effective 
 
 
 #Inferential Results
-Looking at the graphical and numerical results alone is not enough to tell us whether our results will also apply to the population at large. To do this, we will run a chi-square test.
+Looking at the graphical and numerical results alone is not enough to tell us whether our results will also apply to the population at large. To do so, we will need to run an inferential test. The one we will use is a chi-square test.   
 
-##### **South Carolina chi-square test:** 
+We will now run 9 chi-square tests. We will run these tests with the following assumptions:
+
+* There is no relationship between the drug and prevention of Aids.
+* There is no relationship between sex and the efficacy of the drug in preventing Aids. 
+
+##### **South Carolina chi-square test:**     
+Let us begin by forming our two hypotheses:   
+* $H_0$: There is no relationship between the drug and prevention of Aids.  
+* $H_a$: There is a relationship between the drug and prevention of Aids.
+
 ```{r}
 chisqtestGC(Scarolina_table)
 ```
+Our P-value is 0.8942. This means that the probability of getting a sample like this under conditions where the null hypothesis is true is about 89%. This is well above our threshold of 5%. Therefore, we will accept the null hypothesis and conclude that there is no relationship between this drug and prevention of Aids.     
+    
 
-##### **South Carolina chi-square test (Males):**  
+##### **South Carolina chi-square test (Males):**      
+We will form our two hypothesis:    
+* $H_0$: There is no relationship between the drug and preventing Aids in Males.  
+* $H_a$: There is a relationship between the drug and preventing Aids in Males. 
 
 ```{r}
 chisqtestGC(ScarolinaM_table)
 ```
 
-##### **South Carolina chi-square test (Females):** 
+Our P-value is 0.0926. Our chances of getting such a result are higher than our threshold of 5%. Therefore, we accept the null hypothesis and conclude that there is no relationship between this drug and prevention of Aids in Males.    
+
+##### **South Carolina chi-square test (Females):**   
+We will form our two hypothesis:    
+* $H_0$: There is no relationship between the drug and preventing Aids in Females.  
+* $H_a$: There is a relationship between the drug and preventing Aids in Females.   
 
 ```{r}
 chisqtestGC(ScarolinaF_table)
 ```
 
-##### **Central Africa chi-square test:** 
+Our P-value is 0.0264. The probability of getting a sample like this under these conditions is about 2 out of 100. This is below our threshold of 5%. Since the p-value is too low, we will reject the null hypothesis and conclude that there is a relationship between this drug and prevention of Aids in Females.   
+
+##### **Central Africa chi-square test:**     
+Let us form our two hypotheses:   
+* $H_0$: There is no relationship between the drug and prevention of Aids.  
+* $H_a$: There is a relationship between the drug and prevention of Aids.  
 
 ```{r}
 chisqtestGC(cenAfrica_table)
 ```
+Our P-value is 0.5735. The chances of getting a sample like this are high (about 57%), which is well above our threshold of 5%. Therefore, we will accept the null hypothesis and conclude that there is no relationship between this drug and prevention of Aids. 
 
-##### **Central Africa chi-square test (Males):** 
+##### **Central Africa chi-square test (Males):**   
+We will form our two hypothesis:    
+* $H_0$: There is no relationship between the drug and preventing Aids in Males.  
+* $H_a$: There is a relationship between the drug and preventing Aids in Males. 
 
 ```{r}
 chisqtestGC(cenAfricaM_table)
 ```
+Our P-value is 1. The chances of getting results like this are extremely high. We will accept the null hypothesis and conclude that there is no relationship between this drug and preventing Aids in Males.   
 
-##### **Central Africa chi-square test (Females):** 
+##### **Central Africa chi-square test (Females):**   
+We will form our two hypothesis:    
+* $H_0$: There is no relationship between the drug and preventing Aids in Females.  
+* $H_a$: There is a relationship between the drug and preventing Aids in Females. 
 
 ```{r}
 chisqtestGC(cenAfricaF_table)
 ```
+Our P-value is 0.5055, about 50%. Since our p-value is so high, we will accpet the null hypothesis and conclude that there is no relationship between this drug and preventing Aids in Females.
 
-##### **Korea chi-square test:** 
+##### **Korea chi-square test:**   
+Let us form our two hypotheses:   
+* $H_0$: There is no relationship between the drug and prevention of Aids.  
+* $H_a$: There is a relationship between the drug and prevention of Aids.  
 
 ```{r}
 chisqtestGC(korea_table)
 ```
+Our p-value is 0.0699, which is above our threshold of 5%. Therefore, we will accept the null hypothesis and conclude that there is no relationship between this drug and preventing Aids in Korea.
 
-##### **Korea chi-square test (Males):** 
+##### **Korea chi-square test (Males):**   
+We will form our two hypothesis:    
+* $H_0$: There is no relationship between the drug and preventing Aids in Males.  
+* $H_a$: There is a relationship between the drug and preventing Aids in Males. 
 
 ```{r}
 chisqtestGC(koreaM_table)
 ```
+Our P-value is 0. The chances of getting such a result are extremely small. Therefore, we will choose to reject the null hypothesis. So it appears that there is a relationship between this drug and preventing Aids in Males. 
 
-##### **Korea chi-square test (Females):** 
+##### **Korea chi-square test (Females):**   
+We will form our two hypothesis:    
+* $H_0$: There is no relationship between the drug and preventing Aids in Females.  
+* $H_a$: There is a relationship between the drug and preventing Aids in Females. 
 
 ```{r}
 chisqtestGC(koreaF_table)
 ```
+Our p-value is 0.0066. The chances of getting such a result are extremely low. Therefore, we will reject the null hypothesis. It appears that there is a relationship between this drug and preventing Aids in Females.   
 
 #Discussion and Conclusion  
 After viewing the results graphically, numerically, and running chi-square tests on the data, we can conclude the following:
